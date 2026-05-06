@@ -38,8 +38,8 @@ export type Round = {
 export type ConnectionStats = Record<string, Record<string, { correct: number; attempts: number }>>;
 
 export type GameSettings = {
-  categories: Category[];
-  depths: Depth[];
+  categories: (Category | 'custom')[]; // <-- Hier ist der Fix! Erlaubt jetzt auch "custom"
+  depths: (Depth | 'custom')[];        // <-- Hier zur Sicherheit ebenfalls ergänzt
   totalRounds: number | 'all'; // 'all' = einer pro Spieler
   customQuestions: CustomQuestion[];
 };
