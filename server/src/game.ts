@@ -146,7 +146,7 @@ function beginRound(room: Room) {
     questionText: question.text,
     questionCategory: question.category,
     questionDepth: question.depth,
-    isCustom: question.category === 'custom',
+    isCustom: (question.category as string) === 'custom', // <-- HIER WURDE DER FIX ANGEWENDET
     answers: [],
     mappings: {},
     readyForNext: [],
